@@ -1,7 +1,8 @@
+import { registerAction } from "@/actions"
 
 const RegesterFrom = () => {
   return (
-    <form className="login-form">
+    <form className="login-form" action={registerAction}>
        
         <div>
           <label htmlFor="name">Full Name</label>
@@ -20,7 +21,7 @@ const RegesterFrom = () => {
        
         <div>
           <label htmlFor="phone">Phone Number</label>
-          <input type="tel" name="pnone" id="phone" />
+          <input type="tel" name="phone" id="phone" />
         </div>
        
         <div>

@@ -1,6 +1,7 @@
 import { replaceMongoIdInArray, replaceMongoIdinfoOBject } from "@/utils/data-utils";
 
 import { eventModel } from "@/models/events-model";
+import { userModel } from "@/models/users-model";
 
 async function getAllEvents(){
     const allEvents = await eventModel.find().lean()
@@ -12,8 +13,12 @@ async function getEventById (eventId){
     return replaceMongoIdinfoOBject(event)
 }
 
+async function createUser (user){
+    return await userModel.create(user)
+}
+
 export {
-    getAllEvents,
+    createUser, getAllEvents,
     getEventById
 };
 
