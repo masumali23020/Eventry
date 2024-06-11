@@ -1,7 +1,9 @@
+
 import LoginFrom from '@/components/auth/LoginFrom'
 import Link from 'next/link'
 
 const Login = () => {
+    
   return (
     <section className="h-screen grid place-items-center">
         <div

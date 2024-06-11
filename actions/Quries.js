@@ -16,9 +16,13 @@ async function getEventById (eventId){
 async function createUser (user){
     return await userModel.create(user)
 }
+async function foundUserByCredentials (credentials){
+    const user = userModel.findOne(credentials).lean();
+    return user
+}
 
 export {
-    createUser, getAllEvents,
+    createUser, foundUserByCredentials, getAllEvents,
     getEventById
 };
 
