@@ -4,9 +4,11 @@ import { performLogin } from "@/actions";
 import { useRouter } from "next/navigation";
 
 import { useState } from "react";
+import { useAuth } from "../hooks/useAuth";
 
 const LoginFrom = () => {
   const [error, setError] = useState("");
+  const {setAuth} = useAuth()
 
   // const { setAuth } = useAuth();
   const router = useRouter();
@@ -18,7 +20,7 @@ const LoginFrom = () => {
           const found = await performLogin(formData)
 
           if (found) {
-              // setAuth(found);
+              setAuth(found);
               router.push('/');
           } else {
               setError('Please provide a valid login credential');
